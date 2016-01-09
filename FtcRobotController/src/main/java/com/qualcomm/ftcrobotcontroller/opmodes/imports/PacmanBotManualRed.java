@@ -1,4 +1,4 @@
-package com.qualcomm.ftcrobotcontroller.opmodes;
+package com.qualcomm.ftcrobotcontroller.opmodes.imports;
 
 /**
  * Created by tdoylend on 2015-12-17.
