@@ -91,7 +91,7 @@ public class PacmanBotHardwareBase3 extends OpMode {
 
     public void setSpareTire(boolean pos) {
         if (pos) {
-            spareTireController.goTo(240,1);
+            spareTireController.goTo(240,.5);
         } else {
             spareTireController.goTo(0,.25);
         }
