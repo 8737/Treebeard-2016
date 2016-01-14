@@ -21,8 +21,4 @@
       android:textSize="12sp"/>
   </ScrollView>
 </RelativeLayout>
-<<<<<<< Updated upstream
-<!-- From: file:/Users/tom/Documents/workspace/ftc_sdk/lib/FtcCommon/src/main/res/layout/activity_view_logs.xml --><!-- From: file:/C:/Users/tdoylend/Desktop/Repos/Treebeard-2016/FtcRobotController/build/intermediates/exploded-aar/FtcCommon-release/res/layout/activity_view_logs.xml -->
-=======
 <!-- From: file:/Users/tom/Documents/workspace/ftc_sdk/lib/FtcCommon/src/main/res/layout/activity_view_logs.xml --><!-- From: file:/C:/Users/sathk_000/Documents/Treebeard-2016/FtcRobotController/build/intermediates/exploded-aar/FtcCommon-release/res/layout/activity_view_logs.xml -->
->>>>>>> Stashed changes

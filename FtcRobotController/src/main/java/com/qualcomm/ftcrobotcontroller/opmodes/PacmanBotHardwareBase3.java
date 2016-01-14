@@ -28,10 +28,10 @@ public class PacmanBotHardwareBase3 extends OpMode {
     @Override
     public void init() {}
 
-    DcMotor frontLeft;
-    DcMotor frontRight;
-    DcMotor rearLeft;
-    DcMotor rearRight;
+    public DcMotor frontLeft;
+    public DcMotor frontRight;
+    public DcMotor rearLeft;
+    public DcMotor rearRight;
 
     DcMotor basket;
     DcMotor winch;

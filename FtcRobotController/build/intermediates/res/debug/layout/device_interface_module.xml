@@ -82,8 +82,4 @@
 
       </ListView>
    </LinearLayout>
-<<<<<<< Updated upstream
-</LinearLayout><!-- From: file:/Users/tom/Documents/workspace/ftc_sdk/lib/FtcCommon/src/main/res/layout/device_interface_module.xml --><!-- From: file:/C:/Users/tdoylend/Desktop/Repos/Treebeard-2016/FtcRobotController/build/intermediates/exploded-aar/FtcCommon-release/res/layout/device_interface_module.xml -->
-=======
 </LinearLayout><!-- From: file:/Users/tom/Documents/workspace/ftc_sdk/lib/FtcCommon/src/main/res/layout/device_interface_module.xml --><!-- From: file:/C:/Users/sathk_000/Documents/Treebeard-2016/FtcRobotController/build/intermediates/exploded-aar/FtcCommon-release/res/layout/device_interface_module.xml -->
->>>>>>> Stashed changes

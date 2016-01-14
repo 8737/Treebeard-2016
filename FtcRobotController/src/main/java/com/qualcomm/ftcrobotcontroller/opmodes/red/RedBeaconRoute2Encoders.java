@@ -1,11 +1,12 @@
-package com.qualcomm.ftcrobotcontroller.opmodes.imports;
+package com.qualcomm.ftcrobotcontroller.opmodes.red;
 
+import com.qualcomm.ftcrobotcontroller.opmodes.PacmanBotHardwareBase3;
 import com.qualcomm.ftcrobotcontroller.opmodes.control.AutoDriveController;
 
 /**
- * Created by bennettliu on 1/1/16.
+ * Created by sathk_000 on 1/14/2016.
  */
-public class AutoEncoderDriveTest extends PacmanBotHWB2 {
+public class RedBeaconRoute2Encoders extends PacmanBotHardwareBase3{
     AutoDriveController autoDriveController;
     int thing=1000;
     int s=-1;
