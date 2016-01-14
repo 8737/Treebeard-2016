@@ -24,14 +24,8 @@ public class RedBeaconRoute2 extends PacmanBotHardwareBase3 {
     double turnTime = 0.5;
     double forwardTime = 0.55;
     @Override
-    public void loop() {
-        if (moveameoba) {
-            //collector.setPower(-1);
-        }
-        else {
-            //collector.setPower(0);
-        }
-
+    public
+    void loop() {
         if (!set) {
             set = true;
             timer.reset();
@@ -40,32 +34,21 @@ public class RedBeaconRoute2 extends PacmanBotHardwareBase3 {
         if (timer.time() < forwardTime){
             drive.driveStd(0.25, 0.0);
         }
-        else if (timer.time() < forwardTime+turnTime){
+        else if (timer.time() < forwardTime+turnTime) {
             drive.driveStd(0, -0.25);
         }
-        else if (timer.time() < forwardTime+turnTime+4.95) {
+        else if (timer.time() < forwardTime+turnTime+5.55) {
             drive.driveStd(0.25, 0); //1.15
         }
-        /*
-        else if (timer.time() < forwardTime+turnTime+5.35) {
-            drive.driveStd(0, 0.25);
-        }
-        */
-        else if (timer.time() < forwardTime+turnTime+5.35) {
-            drive.driveStd(0.25, 0);
-        }
-        else if (timer.time()<forwardTime+turnTime+8.27) {
+        else if (timer.time() < forwardTime+turnTime+6.15) {
             drive.driveStd(0, -0.25);
         }
-        else if (timer.time()<forwardTime+turnTime+13.75) {
+        else if (timer.time()<forwardTime+turnTime+7.0) {
             drive.driveStd(0.25, 0);
-        }
-        else if (timer.time()<forwardTime+turnTime+13.95) {
-            drive.driveStd(0, -0.25);
         }
         else {
             drive.driveStd(0, 0);
-            //setDumper (true);
+            //climberBucket.set(true);
             moveameoba = false;
         }
     }

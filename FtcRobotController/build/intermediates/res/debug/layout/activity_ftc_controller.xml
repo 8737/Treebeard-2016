@@ -148,4 +148,8 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
       android:text="" />
 
   </RelativeLayout>
+<<<<<<< Updated upstream
 </LinearLayout><!-- From: file:/C:/Users/tdoylend/Desktop/Repos/Treebeard-2016/FtcRobotController/src/main/res/layout/activity_ftc_controller.xml -->
+=======
+</LinearLayout><!-- From: file:/C:/Users/sathk_000/Documents/Treebeard-2016/FtcRobotController/src/main/res/layout/activity_ftc_controller.xml -->
+>>>>>>> Stashed changes
