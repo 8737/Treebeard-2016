@@ -22,6 +22,7 @@ public class RedManualDrive extends PacmanBotHardwareBase3 {
     public ToggleButton mtnModeToggle = new ToggleButton();
     public ToggleButton hookReleaseToggle = new ToggleButton();
     public ToggleButton spareTireToggle = new ToggleButton();
+    public ToggleButton doorToggle = new ToggleButton();
 
     @Override
     public void init() {
@@ -61,7 +62,9 @@ public class RedManualDrive extends PacmanBotHardwareBase3 {
         setBrushPower(DriveMath.threeWay(gamepad1.left_trigger>.5,gamepad1.left_bumper));
 
         climberBucket.set(gamepad1.a);
-        basketDoor.set(gamepad1.b || gamepad1.left_bumper);
+
+        doorToggle.update(gamepad1.b);
+        basketDoor.set(doorToggle.getState() || gamepad1.left_bumper);
 
         hookReleaseToggle.update(gamepad1.start);
         if (hookReleaseToggle.isEvent()) {
