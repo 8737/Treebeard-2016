@@ -45,6 +45,7 @@ public class PacmanBotHardwareBase3 extends OpMode {
     public TwoPositionServo hookRelease;
     public TwoPositionServo basketDoor;
     public TwoPositionServo climberBucket;
+    public TwoPositionServo hookAim;
 
     public Tesla drive;
 
@@ -76,6 +77,8 @@ public class PacmanBotHardwareBase3 extends OpMode {
         spareTireController = new RunToPositionController(spareTire,false);
 
         spareTireController.goTo(0,.5);
+
+        hookAim = new TwoPositionServo(hardwareMap.servo.get("hookaim"),1,.5);
 
     }
 
