@@ -61,7 +61,7 @@ public class PacmanBotHardwareBase3 extends OpMode {
 
         drive = new Tesla(frontLeft, frontRight, rearLeft, rearRight); //Create a new Tesla car - err, drive ;)
 
-        if (!side) climberTripper = new TwoPositionServo(hardwareMap.servo.get("finger"), 0.55, 0);
+        if (!side) climberTripper = new TwoPositionServo(hardwareMap.servo.get("finger"), 0.55, 1);
         //else       climberTripper = new TwoPositionServo(hardwareMap.servo.get("finger"),0.6,1);
 
         basket = hardwareMap.dcMotor.get("basket");
@@ -78,7 +78,7 @@ public class PacmanBotHardwareBase3 extends OpMode {
 
         spareTireController.goTo(0, .5);
 
-        hookAim = new TwoPositionServo(hardwareMap.servo.get("hookaim"), 0, .5);
+        hookAim = new TwoPositionServo(hardwareMap.servo.get("hookaim"), 1, .5);
         //hookAim = new TwoPositionServo(hardwareMap.servo.get("hookaim"),1,.5);
     }
     public void setBasketPower(double power) {
