@@ -77,10 +77,15 @@ public class PacmanBotHardwareBase3 extends OpMode {
 
         spareTireController.goTo(0,.5);
 
+<<<<<<< Updated upstream
+=======
+        hookAim = new TwoPositionServo(hardwareMap.servo.get("hookaim"),0.5,0);
+
+>>>>>>> Stashed changes
     }
 
     public void setBasketPower(double power) {
-        basket.setPower(power * -0.2);
+        basket.setPower(power * -0.4);
     }
 
     public void setBrushPower(double power) {
