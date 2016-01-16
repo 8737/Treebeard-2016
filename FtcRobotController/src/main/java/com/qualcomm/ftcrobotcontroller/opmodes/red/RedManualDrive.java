@@ -27,7 +27,7 @@ public class RedManualDrive extends PacmanBotHardwareBase3 {
     public ToggleButton hookReleaseToggle = new ToggleButton();
     public ToggleButton spareTireToggle = new ToggleButton();
     public ToggleButton doorToggle = new ToggleButton();
-    public ToggleButton handWaveToggle = new ToggleButton();
+    public ToggleButton hookAimToggle = new ToggleButton();
 
     public QuickPresser handWavePresser = new QuickPresser();
 
@@ -91,5 +91,11 @@ public class RedManualDrive extends PacmanBotHardwareBase3 {
         if (spareTireToggle.isEvent()){
             setSpareTire(spareTireToggle.getState());
         }
+
+        hookAimToggle.update(gamepad1.dpad_down);
+        if (hookAimToggle.isEvent()) {
+            hookAim.set(hookAimToggle.getState());
+        }
+
     }
 }
