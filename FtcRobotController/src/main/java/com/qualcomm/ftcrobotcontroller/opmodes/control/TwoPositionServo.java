@@ -28,4 +28,8 @@ public class TwoPositionServo {
         //Set the servo's position to one of its two options.
         this.servo.setPosition(position ? this.on : this.off);
     }
+
+    public void setRaw(double pos) {
+        this.servo.setPosition(pos);
+    }
 }

@@ -2,46 +2,46 @@
 <items version="2" >
 
     <item
-        jar="C:\Users\sathk_000\Documents\Treebeard-2016\FtcRobotController\build\intermediates\exploded-aar\FtcCommon-release\jars\classes.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="6da7d9bc8c9a82321450b6b4273d1746b6cade21">
-        <dex dex="C:\Users\sathk_000\Documents\Treebeard-2016\FtcRobotController\build\intermediates\pre-dexed\debug\classes-cea83ac938df841fac21e3048af63c032a0ece25.jar" />
-    </item>
-    <item
-        jar="C:\Users\sathk_000\Documents\Treebeard-2016\FtcRobotController\build\intermediates\exploded-aar\WirelessP2p-release\jars\classes.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="ebf8372b5bc9dc9f596ed438df36481099d51c41">
-        <dex dex="C:\Users\sathk_000\Documents\Treebeard-2016\FtcRobotController\build\intermediates\pre-dexed\debug\classes-1c7f310a5bee5b2adbc767e9648c3febd23c7e06.jar" />
-    </item>
-    <item
-        jar="C:\Users\sathk_000\Documents\Treebeard-2016\FtcRobotController\build\intermediates\exploded-aar\RobotCore-release\jars\classes.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="2ec6f06847bccfe30fb8f8f75ce888721e4fd275">
-        <dex dex="C:\Users\sathk_000\Documents\Treebeard-2016\FtcRobotController\build\intermediates\pre-dexed\debug\classes-6c0aa15acd14aa17c3f60ccd32f2db624c8d9e84.jar" />
-    </item>
-    <item
-        jar="C:\Users\sathk_000\Documents\Treebeard-2016\FtcRobotController\build\intermediates\exploded-aar\Analytics-release\jars\classes.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="23c74caa2b901107adc4d0aec343c5b8e8be86fb">
-        <dex dex="C:\Users\sathk_000\Documents\Treebeard-2016\FtcRobotController\build\intermediates\pre-dexed\debug\classes-6bda5504ea561f46827883968a5736496699813f.jar" />
-    </item>
-    <item
-        jar="C:\Users\sathk_000\Documents\Treebeard-2016\FtcRobotController\build\intermediates\exploded-aar\Hardware-release\jars\classes.jar"
+        jar="C:\Users\tdoylend\Desktop\Repos\Treebeard-2016\FtcRobotController\build\intermediates\exploded-aar\Hardware-release\jars\classes.jar"
         jumboMode="false"
         revision="21.1.2"
         sha1="55ecd0b0517650a2cffd06137a40de8af3bbbde3">
-        <dex dex="C:\Users\sathk_000\Documents\Treebeard-2016\FtcRobotController\build\intermediates\pre-dexed\debug\classes-10f91d6093c59f88ae2e385d9a082a8bebaeb5e3.jar" />
+        <dex dex="C:\Users\tdoylend\Desktop\Repos\Treebeard-2016\FtcRobotController\build\intermediates\pre-dexed\debug\classes-d78052e1f50d113d6d5706d3575edb3ef3c69e4c.jar" />
     </item>
     <item
-        jar="C:\Users\sathk_000\Documents\Treebeard-2016\FtcRobotController\build\intermediates\exploded-aar\ModernRobotics-release\jars\classes.jar"
+        jar="C:\Users\tdoylend\Desktop\Repos\Treebeard-2016\FtcRobotController\build\intermediates\exploded-aar\WirelessP2p-release\jars\classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="ebf8372b5bc9dc9f596ed438df36481099d51c41">
+        <dex dex="C:\Users\tdoylend\Desktop\Repos\Treebeard-2016\FtcRobotController\build\intermediates\pre-dexed\debug\classes-8fb0c4d93e8834b98fbe08dbb6c5bb121a9928f9.jar" />
+    </item>
+    <item
+        jar="C:\Users\tdoylend\Desktop\Repos\Treebeard-2016\FtcRobotController\build\intermediates\exploded-aar\FtcCommon-release\jars\classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="6da7d9bc8c9a82321450b6b4273d1746b6cade21">
+        <dex dex="C:\Users\tdoylend\Desktop\Repos\Treebeard-2016\FtcRobotController\build\intermediates\pre-dexed\debug\classes-3e088d730e4c3a8d01d144d7762c008b5bdeb22a.jar" />
+    </item>
+    <item
+        jar="C:\Users\tdoylend\Desktop\Repos\Treebeard-2016\FtcRobotController\build\intermediates\exploded-aar\Analytics-release\jars\classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="23c74caa2b901107adc4d0aec343c5b8e8be86fb">
+        <dex dex="C:\Users\tdoylend\Desktop\Repos\Treebeard-2016\FtcRobotController\build\intermediates\pre-dexed\debug\classes-d731258259064e0ec64c58352e97ecdefbd6bdfc.jar" />
+    </item>
+    <item
+        jar="C:\Users\tdoylend\Desktop\Repos\Treebeard-2016\FtcRobotController\build\intermediates\exploded-aar\RobotCore-release\jars\classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="2ec6f06847bccfe30fb8f8f75ce888721e4fd275">
+        <dex dex="C:\Users\tdoylend\Desktop\Repos\Treebeard-2016\FtcRobotController\build\intermediates\pre-dexed\debug\classes-eb04907731cb60dc7d653d9a0b4b1c06690a6e55.jar" />
+    </item>
+    <item
+        jar="C:\Users\tdoylend\Desktop\Repos\Treebeard-2016\FtcRobotController\build\intermediates\exploded-aar\ModernRobotics-release\jars\classes.jar"
         jumboMode="false"
         revision="21.1.2"
         sha1="ad4adcdf8eb6ff2b3b4fe9f1d676f099db621d60">
-        <dex dex="C:\Users\sathk_000\Documents\Treebeard-2016\FtcRobotController\build\intermediates\pre-dexed\debug\classes-0eb92447b7061010c4940101dd43d51670e9f975.jar" />
+        <dex dex="C:\Users\tdoylend\Desktop\Repos\Treebeard-2016\FtcRobotController\build\intermediates\pre-dexed\debug\classes-3aac11c94fb9bcb71dca56a8e00234bbac21af83.jar" />
     </item>
 
 </items>
