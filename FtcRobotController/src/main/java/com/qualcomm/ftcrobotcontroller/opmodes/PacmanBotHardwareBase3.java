@@ -54,42 +54,33 @@ public class PacmanBotHardwareBase3 extends OpMode {
     public void setupHardware() {
         //Everyone's old friend, setupHardware!
 
-        frontLeft  = hardwareMap.dcMotor.get("front_left");
+        frontLeft = hardwareMap.dcMotor.get("front_left");
         frontRight = hardwareMap.dcMotor.get("front_right");
-        rearLeft   = hardwareMap.dcMotor.get("rear_left");
-        rearRight  = hardwareMap.dcMotor.get("rear_right");
+        rearLeft = hardwareMap.dcMotor.get("rear_left");
+        rearRight = hardwareMap.dcMotor.get("rear_right");
 
-        drive = new Tesla(frontLeft,frontRight,rearLeft,rearRight); //Create a new Tesla car - err, drive ;)
+        drive = new Tesla(frontLeft, frontRight, rearLeft, rearRight); //Create a new Tesla car - err, drive ;)
 
-        if (!side) climberTripper = new TwoPositionServo(hardwareMap.servo.get("finger"),0.55,0);
+        if (!side) climberTripper = new TwoPositionServo(hardwareMap.servo.get("finger"), 0.55, 0);
         //else       climberTripper = new TwoPositionServo(hardwareMap.servo.get("finger"),0.6,1);
 
         basket = hardwareMap.dcMotor.get("basket");
-        brush  = hardwareMap.dcMotor.get("collector");
+        brush = hardwareMap.dcMotor.get("collector");
 
-        climberBucket = new TwoPositionServo(hardwareMap.servo.get("thrower"),1,0);
-        basketDoor = new TwoPositionServo(hardwareMap.servo.get("door"),0.65,0.05);
-        hookRelease = new TwoPositionServo(hardwareMap.servo.get("release"),.1,1);
+        climberBucket = new TwoPositionServo(hardwareMap.servo.get("thrower"), 1, 0);
+        basketDoor = new TwoPositionServo(hardwareMap.servo.get("door"), 0.65, 0.05);
+        hookRelease = new TwoPositionServo(hardwareMap.servo.get("release"), .1, 1);
 
         winch = hardwareMap.dcMotor.get("winch");
 
         spareTire = hardwareMap.dcMotor.get("tire");
-        spareTireController = new RunToPositionController(spareTire,false);
+        spareTireController = new RunToPositionController(spareTire, false);
 
-        spareTireController.goTo(0,.5);
+        spareTireController.goTo(0, .5);
 
-<<<<<<< HEAD
-<<<<<<< Updated upstream
-=======
-        hookAim = new TwoPositionServo(hardwareMap.servo.get("hookaim"),0.5,0);
-
->>>>>>> Stashed changes
-=======
-        hookAim = new TwoPositionServo(hardwareMap.servo.get("hookaim"),1,.5);
-
->>>>>>> c5b2fe2012f7df35a7934d3ef542457effeaae91
+        hookAim = new TwoPositionServo(hardwareMap.servo.get("hookaim"), 0, .5);
+        //hookAim = new TwoPositionServo(hardwareMap.servo.get("hookaim"),1,.5);
     }
-
     public void setBasketPower(double power) {
         basket.setPower(power * -0.4);
     }
