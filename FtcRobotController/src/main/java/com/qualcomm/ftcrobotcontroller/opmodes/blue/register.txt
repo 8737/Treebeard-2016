@@ -1,6 +1,0 @@
-This file is just a placeholder to make the blue\ directory
-show up in the Github.
-
-It will be removed on 2016-01-21.
-
- - Thomas

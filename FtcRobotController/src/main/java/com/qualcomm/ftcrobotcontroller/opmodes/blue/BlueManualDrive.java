@@ -1,22 +1,21 @@
-package com.qualcomm.ftcrobotcontroller.opmodes.red;
+package com.qualcomm.ftcrobotcontroller.opmodes.blue;
 
 import com.qualcomm.ftcrobotcontroller.opmodes.DriveMath;
 import com.qualcomm.ftcrobotcontroller.opmodes.PacmanBotHardwareBase3;
 import com.qualcomm.ftcrobotcontroller.opmodes.control.QuickPresser;
-import com.qualcomm.ftcrobotcontroller.opmodes.drive.Drive;
 import com.qualcomm.ftcrobotcontroller.opmodes.ui.ToggleButton;
 import com.qualcomm.robotcore.util.ElapsedTime;
 
 /**
  * Created by tdoylend on 2015-12-20.
  *
- * This is the red-team manual drive opmode.
+ * This is the blue-team manual drive opmode.
  *
  * Robot Type: PacmanBot
  * Config File: Final2
  */
 
-public class RedManualDrive extends PacmanBotHardwareBase3 {
+public class BlueManualDrive extends PacmanBotHardwareBase3 {
 
     public String version = "1.0.0";
 
@@ -39,7 +38,7 @@ public class RedManualDrive extends PacmanBotHardwareBase3 {
         telemetry.addData("Opmode Version",version);
         telemetry.addData("HWB Version",hwbVersion);
 
-        side = false;
+        side = true;
 
         setupHardware();
     }
