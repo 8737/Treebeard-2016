@@ -65,7 +65,8 @@ public class RedManualDrive extends PacmanBotHardwareBase3 {
             climberTripper.set(climberTripperToggle.getState());
         }
 
-        setBasketPower(DriveMath.threeWay(gamepad1.dpad_left, gamepad1.dpad_right));
+        setBasketPower(DriveMath.threeWay(gamepad1.dpad_left, gamepad1.dpad_right) * //\
+                (mtnModeToggle.getState() ? .5 : .3));
         setBrushPower(DriveMath.threeWay(gamepad1.left_trigger > .5, gamepad1.left_bumper));
 
         handWavePresser.update(gamepad1.a);
@@ -85,8 +86,7 @@ public class RedManualDrive extends PacmanBotHardwareBase3 {
             hookRelease.set(hookReleaseToggle.getState());
         }
 
-        setWinchPower(DriveMath.threeWay(gamepad1.right_bumper, gamepad1.right_trigger > .5) * //\
-                     (mtnModeToggle.getState() ? .5 : .3));
+        setWinchPower(DriveMath.threeWay(gamepad1.right_bumper, gamepad1.right_trigger > .5));
 
         spareTireToggle.update(gamepad1.y);
         if (spareTireToggle.isEvent()){

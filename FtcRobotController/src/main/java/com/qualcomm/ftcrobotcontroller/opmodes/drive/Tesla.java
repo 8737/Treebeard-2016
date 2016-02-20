@@ -2,6 +2,7 @@ package com.qualcomm.ftcrobotcontroller.opmodes.drive;
 
 import com.qualcomm.ftcrobotcontroller.opmodes.DriveMath;
 import com.qualcomm.robotcore.hardware.DcMotor;
+import com.qualcomm.robotcore.hardware.DcMotorController;
 
 /**
  * Created by tdoylend on 2015-12-20.
@@ -27,6 +28,19 @@ public class Tesla extends Drive {
         this.frontRight = frontRight;
         this.rearLeft   = rearLeft;
         this.rearRight  = rearRight;
+    }
+
+    public void setE(DcMotorController.RunMode c){
+        this.rearLeft.setMode(c);
+        this.rearRight.setMode(c);
+    }
+
+    public double getLeftE() {
+        return -this.rearLeft.getCurrentPosition();
+    }
+
+    public double getRightE() {
+        return this.rearRight.getCurrentPosition();
     }
 
     public void driveRaw(double left, double right) {
