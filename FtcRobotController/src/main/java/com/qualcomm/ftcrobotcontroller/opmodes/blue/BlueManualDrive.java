@@ -3,13 +3,14 @@ package com.qualcomm.ftcrobotcontroller.opmodes.blue;
 import com.qualcomm.ftcrobotcontroller.opmodes.DriveMath;
 import com.qualcomm.ftcrobotcontroller.opmodes.PacmanBotHardwareBase3;
 import com.qualcomm.ftcrobotcontroller.opmodes.control.QuickPresser;
+import com.qualcomm.ftcrobotcontroller.opmodes.drive.Drive;
 import com.qualcomm.ftcrobotcontroller.opmodes.ui.ToggleButton;
 import com.qualcomm.robotcore.util.ElapsedTime;
 
 /**
  * Created by tdoylend on 2015-12-20.
  *
- * This is the blue-team manual drive opmode.
+ * This is the red-team manual drive opmode.
  *
  * Robot Type: PacmanBot
  * Config File: Final2
@@ -38,7 +39,7 @@ public class BlueManualDrive extends PacmanBotHardwareBase3 {
         telemetry.addData("Opmode Version",version);
         telemetry.addData("HWB Version",hwbVersion);
 
-        side = true;
+        side = false;
 
         setupHardware();
     }
@@ -55,7 +56,8 @@ public class BlueManualDrive extends PacmanBotHardwareBase3 {
 
         if (mtnModeToggle.getState()) {
             drive.driveMtn(driveRate,turnRate); //Drive as desired!
-        } else {
+        }
+        else {
             drive.driveStd(driveRate, turnRate);
         }
 
@@ -64,15 +66,24 @@ public class BlueManualDrive extends PacmanBotHardwareBase3 {
             climberTripper.set(climberTripperToggle.getState());
         }
 
-        setBasketPower(DriveMath.threeWay(gamepad1.dpad_left, gamepad1.dpad_right) * //\
-                (mtnModeToggle.getState() ? .5 : .3));
+        if (basket.getCurrentPosition()<=0 && gamepad1.dpad_left) {
+            setBasketPower(0.1);
+        }
+        else if (basket.getCurrentPosition()>=-255 && gamepad1.dpad_right) {
+            setBasketPower(-0.1);
+        }
+        else {
+            setBasketPower(0);
+        }
+
         setBrushPower(DriveMath.threeWay(gamepad1.left_trigger > .5, gamepad1.left_bumper));
 
         handWavePresser.update(gamepad1.a);
         telemetry.addData("DEBUG-HWT", handWavePresser.counter);
         if (!handWavePresser.toggle) {
             climberBucket.set(gamepad1.a);
-        } else {
+        }
+        else {
             climberBucket.setRaw(0.5 + (Math.sin(timer.time()*4)/4));
         }
 

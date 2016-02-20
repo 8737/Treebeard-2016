@@ -5,6 +5,7 @@ import com.qualcomm.ftcrobotcontroller.opmodes.control.TwoPositionServo;
 import com.qualcomm.ftcrobotcontroller.opmodes.drive.Tesla;
 import com.qualcomm.robotcore.eventloop.opmode.OpMode;
 import com.qualcomm.robotcore.hardware.DcMotor;
+import com.qualcomm.robotcore.hardware.DcMotorController;
 
 /**
  * Created by tdoylend on 2015-12-20.
@@ -33,7 +34,7 @@ public class PacmanBotHardwareBase3 extends OpMode {
     public DcMotor rearLeft;
     public DcMotor rearRight;
 
-    DcMotor basket;
+    public DcMotor basket;
     DcMotor winch;
 
     DcMotor brush;
@@ -80,6 +81,8 @@ public class PacmanBotHardwareBase3 extends OpMode {
 
         hookAim = new TwoPositionServo(hardwareMap.servo.get("hookaim"), 1, .5);
         //hookAim = new TwoPositionServo(hardwareMap.servo.get("hookaim"),1,.5);
+        basket.setMode(DcMotorController.RunMode.RESET_ENCODERS);
+        basket.setMode(DcMotorController.RunMode.RUN_USING_ENCODERS);
     }
     public void setBasketPower(double power) {
         basket.setPower(-power);
