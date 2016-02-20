@@ -16,7 +16,8 @@ public class RedManualDriveTest extends PacmanBotHardwareBase3 {
 
     ElapsedTime timer = new ElapsedTime();
 
-    boolean enableEncoders=false;
+    boolean encoderTick=false;
+    int ticks= 0;
 
     public void init() {
         telemetry.addData("Hello","RMDT- is alive");
@@ -32,7 +33,7 @@ public class RedManualDriveTest extends PacmanBotHardwareBase3 {
         leftcs.updateDesired(dLeft);
         rightcs.updateDesired(dRight);
 
-        if (timer.time()>.01) {
+        if (timer.time()>1.0) {
             double lSpeed = (drive.getLeftE() / timer.time()) / 280.0;
             double rSpeed = (drive.getRightE() / timer.time()) / 280.0;
             leftcs.updateActual(lSpeed);
@@ -41,10 +42,15 @@ public class RedManualDriveTest extends PacmanBotHardwareBase3 {
             rightcs.compute();
             drive.setE(DcMotorController.RunMode.RESET_ENCODERS);
             timer.reset();
-            drive.driveRaw(leftcs.getPower(),rightcs.getPower());
+            ticks++;
+            telemetry.addData("10 : Ticks ",ticks);
+            encoderTick = true;
         } else {
-            drive.setE(DcMotorController.RunMode.RUN_USING_ENCODERS);
+            if (encoderTick) {
+                drive.setE(DcMotorController.RunMode.RUN_USING_ENCODERS);
+                encoderTick=false;
+            }
+            drive.driveRaw(leftcs.getPower(), rightcs.getPower());
         }
-
     }
 }

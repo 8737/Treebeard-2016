@@ -11,6 +11,10 @@ public class SpeedControl {
     double factor = 0.1;
     double cPower = 0;
 
+    double hFactor = 0;
+    double dFactor = 1;
+    double eFactor = 0;
+
     public SpeedControl() {
         this.actual = 0;
         this.desired = 0;
@@ -29,7 +33,7 @@ public class SpeedControl {
         delta = desired - actual;
         double powerChange;
         powerChange = delta * factor;
-        this.cPower += powerChange;
+        this.cPower = (this.cPower * hFactor) + (this.desired * dFactor) + (delta*eFactor);
         this.cPower = DriveMath.limit(this.cPower,-1,1);
     }
 

@@ -61,8 +61,8 @@ public class PacmanBotHardwareBase3 extends OpMode {
 
         drive = new Tesla(frontLeft, frontRight, rearLeft, rearRight); //Create a new Tesla car - err, drive ;)
 
-        if (side) climberTripper = new TwoPositionServo(hardwareMap.servo.get("finger"), 1, .55);
-        else       climberTripper = new TwoPositionServo(hardwareMap.servo.get("finger"),.55,0);
+        if (side) climberTripper = new TwoPositionServo(hardwareMap.servo.get("finger"), .50, 1);
+        else       climberTripper = new TwoPositionServo(hardwareMap.servo.get("finger"),.50,0);
 
         basket = hardwareMap.dcMotor.get("basket");
         brush = hardwareMap.dcMotor.get("collector");
