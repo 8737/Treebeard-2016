@@ -10,7 +10,7 @@ import com.qualcomm.robotcore.util.ElapsedTime;
 /**
  * Created by tdoylend on 2015-12-20.
  *
- * This is the red-team manual drive opmode.
+ * This is the blue-team manual drive opmode.
  *
  * Robot Type: PacmanBot
  * Config File: Final2
@@ -39,7 +39,7 @@ public class BlueManualDrive extends PacmanBotHardwareBase3 {
         telemetry.addData("Opmode Version",version);
         telemetry.addData("HWB Version",hwbVersion);
 
-        side = false;
+        side = true;
 
         setupHardware();
     }
