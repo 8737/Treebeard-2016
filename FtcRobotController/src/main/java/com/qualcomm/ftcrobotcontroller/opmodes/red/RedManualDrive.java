@@ -92,6 +92,7 @@ public class RedManualDrive extends PacmanBotHardwareBase3 {
         if (spareTireToggle.isEvent()){
             setSpareTire(spareTireToggle.getState());
         }
+
         hookAimToggle.update(gamepad1.dpad_down);
         telemetry.addData("AIM",hookAimToggle.getState());
         if (hookAimToggle.isEvent()) {
