@@ -1,4 +1,4 @@
-package com.qualcomm.ftcrobotcontroller.opmodes.red;
+package com.qualcomm.ftcrobotcontroller.opmodes.blue;
 
 import com.qualcomm.ftcrobotcontroller.opmodes.DriveMath;
 import com.qualcomm.ftcrobotcontroller.opmodes.PacmanBotHardwareBase3;
@@ -13,7 +13,7 @@ import com.qualcomm.robotcore.util.ElapsedTime;
 /**
  * Created by tdoylend on 2016-02-25.
  */
-public class RedSkynet extends PacmanBotHardwareBase3 {
+public class BlueSkynet extends PacmanBotHardwareBase3 {
 
     ElapsedTime timer = new ElapsedTime();
 
@@ -41,9 +41,9 @@ public class RedSkynet extends PacmanBotHardwareBase3 {
     public void init() {
         telemetry.addData("Program","Skynet Drive");
         telemetry.addData("Version","1.0.0");
-        telemetry.addData("Color","RED");
+        telemetry.addData("Color","Blue");
 
-        side = false;
+        side = true;
 
         setupHardware();
         drive.setE(DcMotorController.RunMode.RESET_ENCODERS);

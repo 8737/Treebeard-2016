@@ -34,12 +34,12 @@ public class PacmanBotHardwareBase3 extends OpMode {
     public DcMotor rearLeft;
     public DcMotor rearRight;
 
-    DcMotor basket;
-    DcMotor winch;
+    public DcMotor basket;
+    public DcMotor winch;
 
-    DcMotor brush;
+    public DcMotor brush;
 
-    DcMotor spareTire;
+    public DcMotor spareTire;
     RunToPositionController spareTireController;
 
     public TwoPositionServo climberTripper;

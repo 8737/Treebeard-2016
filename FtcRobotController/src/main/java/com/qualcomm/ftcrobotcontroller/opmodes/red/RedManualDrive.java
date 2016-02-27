@@ -56,7 +56,8 @@ public class RedManualDrive extends PacmanBotHardwareBase3 {
 
         if (mtnModeToggle.getState()) {
             drive.driveMtn(driveRate,turnRate); //Drive as desired!
-        } else {
+        }
+        else {
             drive.driveStd(driveRate, turnRate);
         }
 
@@ -65,15 +66,24 @@ public class RedManualDrive extends PacmanBotHardwareBase3 {
             climberTripper.set(climberTripperToggle.getState());
         }
 
-        setBasketPower(DriveMath.threeWay(gamepad1.dpad_left, gamepad1.dpad_right) * //\
-                (mtnModeToggle.getState() ? .5 : .3));
+        if (basket.getCurrentPosition()<=185 && gamepad1.dpad_left) {
+            setBasketPower(0.1);
+        }
+        else if (basket.getCurrentPosition()>=0 && gamepad1.dpad_right) {
+            setBasketPower(-0.1);
+        }
+        else {
+            setBasketPower(0);
+        }
+
         setBrushPower(DriveMath.threeWay(gamepad1.left_trigger > .5, gamepad1.left_bumper));
 
         handWavePresser.update(gamepad1.a);
         telemetry.addData("DEBUG-HWT", handWavePresser.counter);
         if (!handWavePresser.toggle) {
             climberBucket.set(gamepad1.a);
-        } else {
+        }
+        else {
             climberBucket.setRaw(0.5 + (Math.sin(timer.time()*4)/4));
         }
 
@@ -92,7 +102,6 @@ public class RedManualDrive extends PacmanBotHardwareBase3 {
         if (spareTireToggle.isEvent()){
             setSpareTire(spareTireToggle.getState());
         }
-
         hookAimToggle.update(gamepad1.dpad_down);
         telemetry.addData("AIM",hookAimToggle.getState());
         if (hookAimToggle.isEvent()) {
