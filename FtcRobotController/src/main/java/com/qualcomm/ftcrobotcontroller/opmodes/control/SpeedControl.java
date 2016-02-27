@@ -6,10 +6,13 @@ import com.qualcomm.ftcrobotcontroller.opmodes.DriveMath;
  * Created by tdoylend on 2016-01-30.
  */
 public class SpeedControl {
-    double actual;
-    double desired;
-    double factor = 0.1;
-    double cPower = 0;
+    public double actual;
+    public double desired;
+    public double cPower = 0;
+
+    final static double hFactor = 1;
+    final static double dFactor = 0;
+    final static double eFactor = .25;
 
     public SpeedControl() {
         this.actual = 0;
@@ -27,9 +30,7 @@ public class SpeedControl {
     public void compute() {
         double delta;
         delta = desired - actual;
-        double powerChange;
-        powerChange = delta * factor;
-        this.cPower += powerChange;
+        this.cPower = (this.cPower * hFactor) + (this.desired * dFactor) + (delta*eFactor);
         this.cPower = DriveMath.limit(this.cPower,-1,1);
     }
 

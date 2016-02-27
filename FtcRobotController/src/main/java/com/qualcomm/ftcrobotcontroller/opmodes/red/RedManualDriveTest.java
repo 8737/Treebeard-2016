@@ -1,5 +1,6 @@
 package com.qualcomm.ftcrobotcontroller.opmodes.red;
 
+import com.qualcomm.ftcrobotcontroller.opmodes.DriveMath;
 import com.qualcomm.ftcrobotcontroller.opmodes.PacmanBotHardwareBase3;
 import com.qualcomm.ftcrobotcontroller.opmodes.control.SpeedControl;
 import com.qualcomm.robotcore.hardware.DcMotorController;
@@ -16,7 +17,10 @@ public class RedManualDriveTest extends PacmanBotHardwareBase3 {
 
     ElapsedTime timer = new ElapsedTime();
 
-    boolean enableEncoders=false;
+    boolean encoderTick=false;
+    int ticks= 0;
+    double nextTime = 0;
+    boolean startup = true;
 
     public void init() {
         telemetry.addData("Hello","RMDT- is alive");
@@ -26,25 +30,39 @@ public class RedManualDriveTest extends PacmanBotHardwareBase3 {
     }
 
     public void loop() {
+        if (startup) {
+            startup=false;
+            nextTime = timer.time();
+        }
         double dLeft = -gamepad1.left_stick_y + gamepad1.right_stick_x;
         double dRight= -gamepad1.left_stick_y - gamepad1.right_stick_x;
 
         leftcs.updateDesired(dLeft);
         rightcs.updateDesired(dRight);
 
-        if (timer.time()>.01) {
-            double lSpeed = (drive.getLeftE() / timer.time()) / 280.0;
-            double rSpeed = (drive.getRightE() / timer.time()) / 280.0;
-            leftcs.updateActual(lSpeed);
-            rightcs.updateActual(rSpeed);
+        if (timer.time()>=nextTime) {
+            nextTime += .02;
+            double lTicks = drive.getLeftE();
+            double rTicks = drive.getRightE();
+            leftcs.updateActual(DriveMath.limit(lTicks / 160.0,-1,1));
+            rightcs.updateActual(DriveMath.limit(rTicks / 160.0,-1,1));
             leftcs.compute();
             rightcs.compute();
             drive.setE(DcMotorController.RunMode.RESET_ENCODERS);
-            timer.reset();
-            drive.driveRaw(leftcs.getPower(),rightcs.getPower());
+            //timer.reset();
+            ticks++;
+            telemetry.addData("10 : Ticks ", ticks);
+            telemetry.addData("11 : cPower ", leftcs.cPower);
+            telemetry.addData("12 : desired ", leftcs.desired);
+            telemetry.addData("13 : actual ", leftcs.actual);
+            encoderTick = true;
         } else {
-            drive.setE(DcMotorController.RunMode.RUN_USING_ENCODERS);
+            if (encoderTick) {
+                drive.setE(DcMotorController.RunMode.RUN_USING_ENCODERS);
+                encoderTick=false;
+            } else {
+                drive.driveRaw(leftcs.getPower(), rightcs.getPower());
+            }
         }
-
     }
 }

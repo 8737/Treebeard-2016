@@ -33,10 +33,12 @@ package com.qualcomm.ftcrobotcontroller.opmodes;
 
 import com.qualcomm.ftcrobotcontroller.opmodes.blue.BlueBeaconRoute2;
 import com.qualcomm.ftcrobotcontroller.opmodes.blue.BlueManualDrive;
+import com.qualcomm.ftcrobotcontroller.opmodes.red.MinimalSpeedControl;
 import com.qualcomm.ftcrobotcontroller.opmodes.red.RedBeaconRoute2;
 import com.qualcomm.ftcrobotcontroller.opmodes.diag.DiagEncoder;
 import com.qualcomm.ftcrobotcontroller.opmodes.red.RedManualDrive;
 import com.qualcomm.ftcrobotcontroller.opmodes.red.RedManualDriveTest;
+import com.qualcomm.ftcrobotcontroller.opmodes.red.RedSkynet;
 import com.qualcomm.ftcrobotcontroller.opmodes.red.TestWheel;
 import com.qualcomm.robotcore.eventloop.opmode.OpModeManager;
 import com.qualcomm.robotcore.eventloop.opmode.OpModeRegister;
@@ -49,11 +51,13 @@ public class FtcOpModeRegister implements OpModeRegister {
 
   public void register(OpModeManager manager) {
       manager.register("Encoder Diagnostic", DiagEncoder.class);
+      manager.register("RED - Skynet Drive", RedSkynet.class);
       manager.register("RED - Manual Drive", RedManualDrive.class);
       manager.register("RED - Beacon Route 2.0", RedBeaconRoute2.class);
       manager.register("BLUE - Manual Drive", BlueManualDrive.class);
       manager.register("BLUE - Beacon Route 2.0", BlueBeaconRoute2.class);
       manager.register("TEST - CS Drive", RedManualDriveTest.class);
+      manager.register("TEST - CS Drive 2", MinimalSpeedControl.class);
       manager.register("TEST - TW", TestWheel.class);
   }
 
